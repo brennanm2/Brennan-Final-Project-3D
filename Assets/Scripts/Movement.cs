@@ -4,8 +4,9 @@ public class Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float forwardSpeed = 10f;
-    public float strafeSpeed = 5f;
+    public float slideSpeed = 5f;
     public float jumpForce = 5f;
+    public Vector3 targetPosition = new Vector3(30f, 2.6f, -125.5f);
 
     private Rigidbody rb;
     public bool onGround;
@@ -17,6 +18,8 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+       
+       //From google
         // 1. Constant Forward Movement
         // Move the player forward automatically every frame
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
@@ -24,20 +27,25 @@ public class Movement : MonoBehaviour
         // 2. Horizontal Movement (Left/Right)
         // Using GetAxis for smooth horizontal transitions
         float horizontalInput = Input.GetAxis("Horizontal");
-        Vector3 strafeMove = new Vector3(horizontalInput * strafeSpeed * Time.deltaTime, 0, 0);
-        transform.Translate(strafeMove);
+        Vector3 slide = new Vector3(horizontalInput * slideSpeed * Time.deltaTime, 0, 0);
+        transform.Translate(slide);
 
-        // 3. Jump Logic
-        // Check if player is on ground using a Raycast
-        onGround = Physics.Raycast(transform.position, Vector3.down, 1.1f);
+       if (Input.GetKeyDown(KeyCode.Space) && onGround) 
+    {
+    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+        if(Input.GetKeyDown(KeyCode.A))
+       {
+        transform.position = transform.position - new Vector3(17, 0, 0);
+       }
+
+        if(Input.GetKeyDown(KeyCode.D))
+       {
+        transform.position = transform.position + new Vector3(17, 0, 0);
+       }
+
         
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (onGround) 
-            {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            }
-        }
     }
  void OnCollisionEnter(Collision collision)
     {
