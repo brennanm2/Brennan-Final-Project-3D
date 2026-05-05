@@ -4,11 +4,11 @@ public class Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float forwardSpeed = 10f;
-    public float slideSpeed = 5f;
     public float jumpForce = 5f;
     public Vector3 targetPosition = new Vector3(30f, 2.6f, -125.5f);
 
-    private Rigidbody rb;
+    public Rigidbody rb;
+    public Animator anim;
     public bool onGround;
 
     void Start()
@@ -24,13 +24,6 @@ public class Movement : MonoBehaviour
         // Move the player forward automatically every frame
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
-        // 2. Horizontal Movement (Left/Right)
-        // Using GetAxis for smooth horizontal transitions
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Vector3 slide = new Vector3(horizontalInput * slideSpeed * Time.deltaTime, 0, 0);
-        transform.Translate(slide);
-
-       if (Input.GetKeyDown(KeyCode.Space) && onGround) 
     {
     rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
@@ -45,6 +38,15 @@ public class Movement : MonoBehaviour
         transform.position = transform.position + new Vector3(17, 0, 0);
        }
 
+       if(Input.GetKeyDown(KeyCode.B))
+       {
+            anim.SetBool("isSliding", true);
+       }
+       else
+       {
+            anim.SetBool("isSliding", false);
+       }
+
         
     }
  void OnCollisionEnter(Collision collision)
@@ -55,6 +57,8 @@ public class Movement : MonoBehaviour
             
         }
     }
+
+
 
 
 }
