@@ -24,8 +24,12 @@ public class Movement : MonoBehaviour
         // Move the player forward automatically every frame
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
 
+    if(Input.GetKeyDown(KeyCode.Space))
     {
-    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+         if (onGround) 
+            {
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
     }
 
         if(Input.GetKeyDown(KeyCode.A))
@@ -38,7 +42,7 @@ public class Movement : MonoBehaviour
         transform.position = transform.position + new Vector3(17, 0, 0);
        }
 
-       if(Input.GetKeyDown(KeyCode.B))
+       if(Input.GetKeyDown(KeyCode.S))
        {
             anim.SetBool("isSliding", true);
        }
