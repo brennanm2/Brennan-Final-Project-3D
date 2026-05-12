@@ -8,8 +8,6 @@ public class Camera: MonoBehaviour {
     void LateUpdate() {
         // LateUpdate ensures the player finishes moving before the camera follows
         Vector3 desiredPosition = target.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
-        transform.LookAt(target); // Keeps camera pointed at the player
+        transform.position = desiredPosition;
     }
 }
