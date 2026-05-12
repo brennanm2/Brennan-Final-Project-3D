@@ -13,5 +13,11 @@ public class Playerdata : MonoBehaviour
 
         other.gameObject.SetActive(false);
       }
+
+      if (other.gameObject.tag == "Magnet")
+      {
+
+        other.gameObject.SetActive(false);
+      }
     }
 }
