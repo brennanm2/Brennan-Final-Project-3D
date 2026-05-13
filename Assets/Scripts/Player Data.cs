@@ -3,6 +3,7 @@ using UnityEngine;
 public class Playerdata : MonoBehaviour
 {
     public int coinsCollected;
+    public bool magnetCollected;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,5 +20,7 @@ public class Playerdata : MonoBehaviour
 
         other.gameObject.SetActive(false);
       }
+
+      
     }
 }
