@@ -2730,7 +2730,7 @@ GameObject:
   - component: {fileID: 228357561}
   - component: {fileID: 228357564}
   m_Layer: 0
-  m_Name: Crewmate Positon
+  m_Name: Crewmate Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2748,8 +2748,7 @@ Transform:
   m_LocalPosition: {x: 9.72, y: 1.66, z: -88.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 396611840}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &228357561
@@ -4314,6 +4313,7 @@ GameObject:
   - component: {fileID: 396611839}
   - component: {fileID: 396611838}
   - component: {fileID: 396611837}
+  - component: {fileID: 396611841}
   m_Layer: 0
   m_Name: Crewmate
   m_TagString: Player
@@ -4410,13 +4410,35 @@ Transform:
   m_GameObject: {fileID: 396611835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.72, y: 1.66, z: -88.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1084276366}
-  m_Father: {fileID: 228357560}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &396611841
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396611835}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9e05175cec160954288f93d065d1a81d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &396912436
 GameObject:
   m_ObjectHideFlags: 0
@@ -16654,15 +16676,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8245821901637893012, guid: 8070192c206b5b1438af953c23d576d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2614684
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 8245821901637893012, guid: 8070192c206b5b1438af953c23d576d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1091.0175
+      value: -1091.02
       objectReference: {fileID: 0}
     - target: {fileID: 8245821901637893012, guid: 8070192c206b5b1438af953c23d576d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1172738
+      value: 2.12
       objectReference: {fileID: 0}
     - target: {fileID: 8245821901637893012, guid: 8070192c206b5b1438af953c23d576d3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18677,6 +18699,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 105762471}
   - {fileID: 1905842721}
+  - {fileID: 396611840}
   - {fileID: 228357560}
   - {fileID: 330585546}
   - {fileID: 1157613431}
