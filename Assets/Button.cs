@@ -1,16 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI; // Required for the Button component
 
-public class Button : MonoBehaviour
+public class ButtonHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // This method will be called when the button is clicked
+    public void OnButtonClick()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Button was clicked!");
     }
 }

@@ -5,16 +5,17 @@ public class Movement : MonoBehaviour
     [Header("Movement Settings")]
     public float forwardSpeed = 10f;
     public float jumpForce = 5f;
-    public Vector3 targetPosition = new Vector3(30f, 2.6f, -125.5f);\
-    public 
-
+    public Vector3 spawnPosition;
     public Rigidbody rb;
     public bool onGround;
+    public Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
+    
 
     void Update()
     {
@@ -34,8 +35,29 @@ public class Movement : MonoBehaviour
         transform.position = transform.position + new Vector3(17, 0, 0);
        }
 
+       if(Input.GetKeyDown(KeyCode.S))
+       {
+        
+       }
+
     
     }
+
+    void FixedUpdate()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            anim.SetBool("Sliding", true);
+        }
+        else
+        {
+             anim.SetBool("Sliding", false);
+    }
+    }
+
+
+
+
 void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -43,8 +65,18 @@ void OnCollisionEnter(Collision collision)
             onGround = true;
             
         }
+         if (collision.gameObject.tag == "Hazard")
+        {
+             rb.position = spawnPosition;
+        }
     }
         
+
+
+void TaskOnClick()
+{
+    Debug.Log ("You have clicked the button!");
+}
     }
 
 
