@@ -34,12 +34,11 @@ public class Movement : MonoBehaviour
        {
         transform.position = transform.position + new Vector3(17, 0, 0);
        }
-
-       if(Input.GetKeyDown(KeyCode.S))
-       {
-        
-       }
-
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            anim.Play("slide");
+        }
+      
     
     }
 
@@ -65,11 +64,13 @@ void OnCollisionEnter(Collision collision)
             onGround = true;
             
         }
-         if (collision.gameObject.tag == "Hazard")
+        if (collision.gameObject.tag == "NewLevel")
         {
-             rb.position = spawnPosition;
+            Debug.Log ("You have reached the Next Level, Good luck!)");
+            
         }
     }
+      
         
 
 

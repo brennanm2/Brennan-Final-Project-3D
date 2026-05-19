@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Magnet
   - Hazard
+  - NewLevel
   layers:
   - Default
   - TransparentFX
