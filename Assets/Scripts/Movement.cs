@@ -38,6 +38,10 @@ public class Movement : MonoBehaviour
         {
             anim.Play("slide");
         }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            anim.Play("slide");
+        }
       
     
     }
@@ -69,6 +73,12 @@ void OnCollisionEnter(Collision collision)
             Debug.Log ("You have reached the Next Level, Good luck!)");
             
         }
+
+         if (collision.gameObject.tag == "NewLevel")
+        {
+           forwardSpeed = 88;
+        }
+
     }
       
         
