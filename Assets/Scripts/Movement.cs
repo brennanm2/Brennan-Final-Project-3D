@@ -5,7 +5,9 @@ public class Movement : MonoBehaviour
     [Header("Movement Settings")]
     public float forwardSpeed = 10f;
     public float jumpForce = 5f;
-    public Vector3 targetPosition = new Vector3(30f, 2.6f, -125.5f);
+    public Vector3 targetPosition = new Vector3(30f, 2.6f, -125.5f);\
+    public 
+
     public Rigidbody rb;
     public bool onGround;
 
@@ -31,11 +33,6 @@ public class Movement : MonoBehaviour
        {
         transform.position = transform.position + new Vector3(17, 0, 0);
        }
-
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            isSliding
-        }
 
     
     }
