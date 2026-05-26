@@ -38,12 +38,10 @@ public class Movement : MonoBehaviour
         {
             anim.Play("slide");
         }
-        if(Input.GetKeyDown(KeyCode.S))
+    if(Input.GetKeyDown(KeyCode.Space))
         {
             anim.Play("slide");
         }
-      
-    
     }
 
     void FixedUpdate()
@@ -55,6 +53,11 @@ public class Movement : MonoBehaviour
         else
         {
              anim.SetBool("Sliding", false);
+    }
+
+    if(Input.GetKeyDown(KeyCode.Space))
+    {
+        anim.SetBool("Jumping", true);
     }
     }
 
