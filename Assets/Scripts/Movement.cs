@@ -64,20 +64,20 @@ public class Movement : MonoBehaviour
 
 
 
-void OnCollisionEnter(Collision collision)
+void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Ground")
         {
             onGround = true;
             
         }
-        if (collision.gameObject.tag == "NewLevel")
+        if (other.gameObject.tag == "NewLevel")
         {
             Debug.Log ("You have reached the Next Level, Good luck!)");
             
         }
 
-         if (collision.gameObject.tag == "NewLevel")
+         if (other.gameObject.tag == "NewLevel")
         {
            forwardSpeed = 88;
         }
