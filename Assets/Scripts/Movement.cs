@@ -59,7 +59,7 @@ public class Movement : MonoBehaviour
     {
         anim.SetBool("Jumping", true);
     }
-    }
+
 
 
 
@@ -79,7 +79,7 @@ void OnCollisionEnter(Collision other)
 
          if (other.gameObject.tag == "NewLevel")
         {
-           forwardSpeed = 88;
+           forwardSpeed = 88f;
         }
 
     }
@@ -92,6 +92,8 @@ void TaskOnClick()
     Debug.Log ("You have clicked the button!");
 }
     }
+
+}
 
 
 
