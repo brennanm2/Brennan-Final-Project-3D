@@ -10,6 +10,7 @@ TagManager:
   - Magnet
   - Hazard
   - NewLevel
+  - New
   layers:
   - Default
   - TransparentFX

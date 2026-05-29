@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ENDGAME : MonoBehaviour
 {
-    public float
+    public float a;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
